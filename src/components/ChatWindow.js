@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
+import Mesg from './Mesg';
 const regeneratorRuntime =  require("regenerator-runtime");
 
 
+
 class ChatWindow extends Component {
-    reg = async() =>{
-        console.log("find!!")
+    render(){
+        return(
+            <div>
+                <Mesg/>
+            </div>
+        )
     }
-  render(){
-      return(
-      <div onClick={this.reg}>
-          REGENERATOR ТЕПЕРЬ НАЙДЕН!
-      </div>
-      )
-  }
 }
 
 export default ChatWindow;
