@@ -1,29 +1,36 @@
 {
-  "name": "react-boilerplate",
+  "name": "nani",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "* `npm install` * `npm start`",
+  "main": "webpack.config.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot",
-    "build": "webpack --mode production"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --mode development --open --hot"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kalinnikov2n/NanoChat.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kalinnikov2n/NanoChat/issues"
+  },
+  "homepage": "https://github.com/Kalinnikov2n/NanoChat#readme",
   "devDependencies": {
-    "@babel/core": "^7.1.2",
-    "@babel/preset-env": "^7.1.0",
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
     "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.4",
-    "css-loader": "^1.0.0",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
     "html-webpack-plugin": "^3.2.0",
-    "style-loader": "^0.23.0",
-    "webpack": "^4.20.2",
-    "webpack-cli": "^3.1.1",
-    "webpack-dev-server": "^3.1.14"
+    "style-loader": "^1.0.0",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.1"
   },
   "dependencies": {
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2"
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
   }
 }
