@@ -21,7 +21,6 @@ class ChatWindow extends Component {
         const history = JSON.stringify(this.props.history)
         localStorage.setItem("history", history)
         }
-        console.log(localStorage.getItem("history"))
     }
 
     render(){

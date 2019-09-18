@@ -12,11 +12,18 @@ class Chat extends Component {
             await this.props.addHistory(history)
         }
     }
+    reverse = ()=>{
+        localStorage.clear()
+        location.reload()
+    }
     render() {
         return (
             <div>
+            <div>
                 <ChatWindow/>
                 <ClientForm/>
+            </div>
+            <input onClick={this.reverse} type="submit" value="reverse"/>
             </div>
         );
     }
