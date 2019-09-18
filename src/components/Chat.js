@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import '../public/styles/index.css';
 import ChatWindow from "./ChatWindow";
 import ClientForm from "./ClientForm";
 import {addHistory} from "../redux/actions"
@@ -18,12 +17,12 @@ class Chat extends Component {
     }
     render() {
         return (
-            <div>
-            <div>
+            <div className="Chat">
+            <div >
                 <ChatWindow/>
                 <ClientForm/>
             </div>
-            <input onClick={this.reverse} type="submit" value="reverse"/>
+            <input className="Reverse" onClick={this.reverse} type="submit" value="reverse"/>
             </div>
         );
     }

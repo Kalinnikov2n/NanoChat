@@ -31,9 +31,9 @@ class ClientForm extends Component {
 
     render() {
         return (
-            <div>
-                <input onChange={this.inputChange} value={this.state.message} placeholder="write something" />
-                <input onClick={this.sendMes} type="submit" value="Ask" />
+            <div className="Form">
+                <input className="Input" onChange={this.inputChange} value={this.state.message} placeholder="write something" />
+                <input  className="Submit" onClick={this.sendMes} type="submit" value="Ask" />
             </div>
         );
     }

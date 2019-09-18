@@ -25,7 +25,7 @@ class ChatWindow extends Component {
 
     render(){
         return(
-            <div>
+            <div className="History">
                 {this.props.history ?
                 this.props.history.map((el, i) => <Mesg message={el} key={i}/>) : null
             }
