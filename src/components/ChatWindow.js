@@ -12,11 +12,16 @@ import {addCuid, addBotMes} from "../redux/actions"
 class ChatWindow extends Component {
 
     componentDidMount = async()=>{
-      
+
         const cuid = await getCuid(this.props.uuid);
         await this.props.addCuid(cuid);
+        if(!localStorage.getItem("history")){
         const welcomeMessage = await getWelcomeMessage(cuid);
         await this.props.addBotMes(welcomeMessage);
+        const history = JSON.stringify(this.props.history)
+        localStorage.setItem("history", history)
+        }
+        console.log(localStorage.getItem("history"))
     }
 
     render(){

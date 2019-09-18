@@ -1,4 +1,4 @@
-import {ADD_CUID, ADD_BOT_MES, ADD_CLIENT_MES} from './types'
+import {ADD_CUID, ADD_BOT_MES, ADD_CLIENT_MES, ADD_HISTORY} from './types'
 
 const addCuid = (cuid) => {
     return {
@@ -21,7 +21,14 @@ const addCuid = (cuid) => {
     }
   };
   
+const addHistory = (history) =>{
+  return{
+    type : ADD_HISTORY,
+    history: history
+  }
+}
   
   
-  export {addCuid, addBotMes, addClientMes };
+  
+  export {addCuid, addBotMes, addClientMes, addHistory };
   

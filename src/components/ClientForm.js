@@ -24,6 +24,8 @@ class ClientForm extends Component {
         await this.props.addClientMes(this.state.message)
         const answer = await sendMessage(this.state.message, this.props.cuid)
         await this.props.addBotMes(answer)
+        const history = JSON.stringify(this.props.history)
+        localStorage.setItem("history", history)
         this.setState({ message: "" })
     }
 
@@ -37,7 +39,8 @@ class ClientForm extends Component {
     }
 }
 const mapStateToProps = (state) => ({
-    cuid: state.cuid
+    cuid: state.cuid,
+    history: state.history
   })
   
   function mapDispatchToProps(dispatch){
