@@ -23,14 +23,16 @@ class ChatWindow extends Component {
         const welcomeMessage = await getWelcomeMessage(this.state.cuid);
         await this.setState({
             history: [
-                ...this.state.history, {bot: welcomeMessage}
+                ...this.state.history, {text: welcomeMessage, owner: "bot"}
             ]
         })
     }
     render(){
         return(
             <div>
-                <Mesg/>
+                {this.state.history ?
+                this.state.history.map((el, i) => <Mesg message={el} key={i}/>) : null
+            }
             </div>
         )
     }

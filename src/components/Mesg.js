@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
 
-const Mesg= () => {
+const Mesg= (props) => {
     return(
         <div>
-           Сообщение
+           {props.message.text}
         </div>
     )
 }
