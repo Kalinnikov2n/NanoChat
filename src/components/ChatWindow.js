@@ -1,41 +1,47 @@
 import React, { Component } from 'react';
 import Mesg from './Mesg';
+import {connect} from 'react-redux'
 const regeneratorRuntime =  require("regenerator-runtime");
 import getCuid from '../public/js/getCuid';
 import getWelcomeMessage from '../public/js/getWelcomeMessage';
 import { async } from 'regenerator-runtime';
+import {addCuid, addBotMes} from "../redux/actions"
 
 
 
 class ChatWindow extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          uuid:"772c9859-4dd3-4a0d-b87d-d76b9f43cfa4", 
-          cuid: '', 
-          history: [],
-          inputMesg: '',
-        }
-      }
+
     componentDidMount = async()=>{
-        const cuid = await getCuid(this.state.uuid)
-        await this.setState({cuid: cuid})
-        const welcomeMessage = await getWelcomeMessage(this.state.cuid);
-        await this.setState({
-            history: [
-                ...this.state.history, {text: welcomeMessage, owner: "bot"}
-            ]
-        })
+      
+        const cuid = await getCuid(this.props.uuid);
+        await this.props.addCuid(cuid);
+        const welcomeMessage = await getWelcomeMessage(cuid);
+        await this.props.addBotMes(welcomeMessage);
     }
+
     render(){
         return(
             <div>
-                {this.state.history ?
-                this.state.history.map((el, i) => <Mesg message={el} key={i}/>) : null
+                {this.props.history ?
+                this.props.history.map((el, i) => <Mesg message={el} key={i}/>) : null
             }
             </div>
+
         )
     }
 }
-
-export default ChatWindow;
+const mapStateToProps = (state) => ({
+    uuid: state.uuid,
+    history: state.history,
+    cuid: state.cuid
+  })
+  
+  function mapDispatchToProps(dispatch){
+    return {
+        addCuid: (cuid) => dispatch(addCuid(cuid)),
+        addBotMes: (text) => dispatch(addBotMes(text))
+    }
+  }
+  
+  export default connect(mapStateToProps, mapDispatchToProps)(ChatWindow)
+  

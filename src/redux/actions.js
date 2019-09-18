@@ -1,4 +1,4 @@
-import {ADD_CUID, ADD_BOT_MES, ADD_CLIENT_MES} from './actions'
+import {ADD_CUID, ADD_BOT_MES, ADD_CLIENT_MES} from './types'
 
 const addCuid = (cuid) => {
     return {

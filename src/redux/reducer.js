@@ -1,4 +1,4 @@
-import {ADD_CUID, ADD_BOT_MES, ADD_CLIENT_MES} from './actions'
+import {ADD_CUID, ADD_BOT_MES, ADD_CLIENT_MES} from './types'
 
 const initialState = {
     uuid:"772c9859-4dd3-4a0d-b87d-d76b9f43cfa4", 
@@ -26,7 +26,6 @@ export default function(state = initialState, action) {
                 history : [...state.history, {text: action.text, owner: "client"}]
             }
           }
-         
           default:
             return state;
     }
