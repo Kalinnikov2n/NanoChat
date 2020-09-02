@@ -5,7 +5,7 @@ import {addHistory} from "../redux/actions"
 import {connect} from 'react-redux'
 
 class Chat extends Component {
-    componentDidMount = async() =>{
+    componentDidMount =  async() =>{
         if(localStorage.getItem("history")){
             const history = JSON.parse(localStorage.getItem("history"))
             await this.props.addHistory(history)
